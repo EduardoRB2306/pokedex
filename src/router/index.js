@@ -1,5 +1,10 @@
+import Vue from 'vue';
+import VueRouter from 'vue-router';
 import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import AboutView from '../views/AboutView.vue'
+import DetailView from '../views/DetailView.vue'
+
 
 const routes = [
   {
@@ -16,6 +21,11 @@ const routes = [
     component: function () {
       return import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
     }
+  },
+  {
+    path: '/detail/:id',
+    name: 'detail',
+    component: DetailView,
   }
 ]
 
